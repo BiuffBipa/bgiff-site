@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berlin Gate International Film Festival — Independent Cinema · Hybrid · Berlin</title>
+<meta name="description" content="Berlin Gate International Film Festival is a hybrid festival celebrating world independent cinema in every format — screened live in Berlin and online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0e; --bg-2:#101015; --panel:#14141a; --line:rgba(200,145,46,.22);
+    --gold:#C8912E; --gold-2:#E9C560; --gold-soft:#d9b25e;
+    --cream:#F3ECDD; --text:#e7e3da; --muted:#9a9099;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--cream);line-height:1.15}
+  .kicker{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.28em;font-size:.72rem;color:var(--gold-soft);text-transform:uppercase}
+  .gold-line{width:64px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-2));border:0;margin:22px auto}
+  .gold-line.left{margin:22px 0}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.04em;padding:14px 30px;border-radius:2px;transition:.25s;font-size:.92rem}
+  .btn-primary{background:linear-gradient(120deg,#E9C560,#C8912E);color:#221704}
+  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-2)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(11,11,14,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{font-family:'Cinzel',serif;font-weight:700;letter-spacing:.16em;color:var(--cream);font-size:1.05rem}
+  .brand span{color:var(--gold-2)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:.86rem;letter-spacing:.06em;color:var(--muted);transition:.2s}
+  .nav-links a:hover{color:var(--gold-2)}
+  .nav-cta{padding:9px 20px;font-size:.82rem}
+  .burger{display:none;font-size:1.5rem;color:var(--gold-2);background:none;border:0;cursor:pointer}
+
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;text-align:center;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+     radial-gradient(120% 80% at 50% 12%, rgba(200,145,46,.16), transparent 55%),
+     radial-gradient(90% 60% at 50% 120%, rgba(233,197,96,.08), transparent 60%);}
+  .hero .wrap{position:relative;padding-top:60px;padding-bottom:60px}
+  .hero h1{font-size:clamp(2.8rem,7vw,5.4rem);letter-spacing:.02em;margin:18px 0 10px}
+  .hero .lede{max-width:620px;margin:0 auto;color:var(--muted);font-size:1.12rem}
+  .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .facts{display:flex;gap:38px;justify-content:center;flex-wrap:wrap;margin-top:52px;padding-top:30px;border-top:1px solid var(--line)}
+  .fact{min-width:130px}
+  .fact .n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold-2)}
+  .fact .l{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  section{padding:92px 0;border-top:1px solid rgba(255,255,255,.04)}
+  .sec-head{text-align:center;margin-bottom:54px}
+  .sec-head h2{font-size:clamp(2rem,4.4vw,2.9rem)}
+  .sec-head p{color:var(--muted);max-width:640px;margin:14px auto 0}
+  .lead-serif{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--cream);line-height:1.6}
+
+  .grid{display:grid;gap:20px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:26px 24px;transition:.25s}
+  .card:hover{border-color:var(--gold);transform:translateY(-3px)}
+  .card h3{font-size:1.35rem;color:var(--gold-2);margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.94rem}
+  .card ul{list-style:none;margin-top:10px}
+  .card li{color:var(--text);font-size:.92rem;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  .card li:last-child{border:0}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .chip{border:1px solid var(--line);border-radius:40px;padding:8px 18px;font-size:.86rem;color:var(--text)}
+  .chip:hover{border-color:var(--gold);color:var(--gold-2)}
+
+  .fees{overflow:hidden;border:1px solid var(--line);border-radius:6px}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:16px 18px;text-align:center;border-bottom:1px solid rgba(255,255,255,.06);font-size:.95rem}
+  th{background:#16161c;font-family:'Cinzel',serif;font-weight:600;font-size:.74rem;letter-spacing:.14em;color:var(--gold-soft);text-transform:uppercase}
+  td:first-child,th:first-child{text-align:left}
+  tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:rgba(200,145,46,.05)}
+  .price{color:var(--gold-2);font-family:'Cormorant Garamond',serif;font-size:1.15rem}
+
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .panelbox{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:34px}
+  .stat-row{display:flex;gap:30px;flex-wrap:wrap;margin-top:20px}
+  .stat .n{font-family:'Cormorant Garamond',serif;font-size:2.1rem;color:var(--gold-2)}
+  .stat .l{font-size:.78rem;color:var(--muted);letter-spacing:.08em}
+
+  .cta-band{text-align:center;background:
+     radial-gradient(100% 120% at 50% 0%, rgba(200,145,46,.12), transparent 60%)}
+  .cta-band h2{font-size:clamp(2rem,5vw,3.2rem)}
+
+  footer{padding:56px 0 40px;border-top:1px solid var(--line);background:var(--bg-2)}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:flex-start}
+  .foot-brand{font-family:'Cinzel',serif;letter-spacing:.16em;color:var(--cream);font-size:1rem}
+  .foot small{color:var(--muted);font-size:.82rem;display:block;margin-top:12px;max-width:340px;line-height:1.7}
+  .foot-links{display:flex;flex-direction:column;gap:9px}
+  .foot-links a{color:var(--muted);font-size:.86rem}
+  .foot-links a:hover{color:var(--gold-2)}
+  .copen{text-align:center;color:#6a6670;font-size:.78rem;margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.05)}
+
+  @media(max-width:900px){
+    .g3,.g4{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr;gap:28px}
+    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:#0d0d11;border-bottom:1px solid var(--line);padding:18px 26px;gap:16px}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+  }
+  @media(max-width:560px){ .g3,.g4,.g2{grid-template-columns:1fr} .facts{gap:22px} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top">BERLIN <span>GATE</span></a>
+    <div class="nav-links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#categories">Categories</a>
+      <a href="#awards">Awards</a>
+      <a href="#deadlines">Deadlines &amp; Fees</a>
+      <a href="#jury">Jury</a>
+      <a href="#contact">Contact</a>
+      <a href="#submit" class="btn btn-primary nav-cta">Submit</a>
+    </div>
+    <button class="burger" onclick="document.getElementById('navlinks').classList.toggle('open')">&#9776;</button>
+  </nav>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Inaugural Edition · Berlin · 2026</div>
+    <h1>Berlin Gate International<br>Film Festival</h1>
+    <p class="lede">A hybrid celebration of world independent cinema — in every format — screened live in Berlin and online for a global audience.</p>
+    <div class="hero-cta">
+      <a href="#submit" class="btn btn-primary">Submit Your Film</a>
+      <a href="#categories" class="btn btn-ghost">Explore Categories</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="n">Hybrid</div><div class="l">Berlin + Online</div></div>
+      <div class="fact"><div class="n">All Formats</div><div class="l">Feature · Short · Doc · More</div></div>
+      <div class="fact"><div class="n">Global</div><div class="l">Filmmakers Worldwide</div></div>
+      <div class="fact"><div class="n">FilmFreeway</div><div class="l">Official Submissions</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The Gateway</div>
+      <hr class="gold-line">
+      <h2>Where Independent Cinema Passes Through</h2>
+    </div>
+    <div class="split">
+      <div>
+        <p class="lead-serif">Berlin has always been a city of crossings — of walls that fell, of borders opened, of voices set free. Berlin Gate International Film Festival carries that spirit into cinema.</p>
+        <p style="margin-top:18px;color:var(--muted)">We are an independent, international festival built to discover new voices and connect them with audiences and industry. Our mission stands on three pillars: a launchpad of prestige and discovery for filmmakers, a global hybrid platform reaching audiences everywhere, and a curated, memorable festival experience in the heart of Berlin.</p>
+        <p style="margin-top:18px;color:var(--muted)">Every format is welcome — from a first student short to a feature by a seasoned auteur. What unites the selection is originality, courage, and craft.</p>
+      </div>
+      <div class="panelbox">
+        <div class="kicker" style="color:var(--gold-soft)">At a Glance</div>
+        <div class="stat-row">
+          <div class="stat"><div class="n">3</div><div class="l">Guiding Pillars</div></div>
+          <div class="stat"><div class="n">20+</div><div class="l">Award Categories</div></div>
+        </div>
+        <div class="stat-row" style="margin-top:22px">
+          <div class="stat"><div class="n">2</div><div class="l">Ways to Screen</div></div>
+          <div class="stat"><div class="n">1</div><div class="l">City — Berlin</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="categories" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Compete</div>
+      <hr class="gold-line">
+      <h2>Categories</h2>
+      <p>A focused, comprehensive slate across film, screenplay and photography. Submit one work to as many categories as it fits.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <h3>Film</h3>
+        <ul>
+          <li>Feature — Narrative</li>
+          <li>Feature — Documentary</li>
+          <li>Low-Budget Feature</li>
+          <li>Short Film</li>
+          <li>Short Documentary</li>
+          <li>Animation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>New Voices &amp; Forms</h3>
+        <ul>
+          <li>Music Video</li>
+          <li>Student Film</li>
+          <li>Experimental</li>
+          <li>Underground Film</li>
+          <li>AI Film</li>
+          <li>Screenplay</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Photography</h3>
+        <ul>
+          <li>Open / Colour</li>
+          <li>Black &amp; White</li>
+          <li>Portrait</li>
+          <li>Street &amp; Documentary</li>
+          <li>Crossing Borders (Thematic)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Be Recognised</div>
+      <hr class="gold-line">
+      <h2>Awards</h2>
+      <p>From craft honours to our signature Grand Prize, awarded by an independent professional jury and by the audience.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><h3>Craft</h3><ul><li>Best Director</li><li>Best Screenplay</li><li>Best Cinematography</li><li>Best Editing</li><li>Best Score</li><li>Best Performance</li></ul></div>
+      <div class="card"><h3>Berlin Themes</h3><ul><li>Freedom &amp; Human Rights</li><li>Migration &amp; Crossing Borders</li><li>Environment</li></ul></div>
+      <div class="card"><h3>Emerging Talent</h3><ul><li>Best First-Time Director</li><li>Best Female Director</li></ul></div>
+      <div class="card"><h3>Special</h3><ul><li>Audience Award</li><li><span style="color:var(--gold-2)">The Berlin Gate Award</span><br><span style="font-size:.8rem;color:var(--muted)">Grand Prize — Best of the Festival</span></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="deadlines" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Enter</div>
+      <hr class="gold-line">
+      <h2>Deadlines &amp; Entry Fees</h2>
+      <p>Enter early and save. All submissions are handled securely through FilmFreeway. Fees below are per work (per image for photography).</p>
+    </div>
+    <div class="fees">
+      <table>
+        <thead>
+          <tr><th>Category</th><th>Earlybird</th><th>Regular</th><th>Late</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Short · Animation · Music Video · Student · Underground · AI</td><td class="price">€12</td><td class="price">€18</td><td class="price">€25</td></tr>
+          <tr><td>Feature · Documentary · Low-Budget Feature</td><td class="price">€25</td><td class="price">€35</td><td class="price">€50</td></tr>
+          <tr><td>Screenplay</td><td class="price">€12</td><td class="price">€18</td><td class="price">€25</td></tr>
+          <tr><td>Photography (per image)</td><td class="price">€5</td><td class="price">€8</td><td class="price">€12</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;color:var(--muted);margin-top:22px;font-size:.9rem">Exact deadline dates are published on our FilmFreeway listing. Works completed within the last 24 months are eligible; no premiere requirement. Non-English films require English subtitles.</p>
+    <div style="text-align:center;margin-top:30px"><a href="#submit" class="btn btn-primary">Submit on FilmFreeway</a></div>
+  </div>
+</section>
+
+<section id="jury">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Selection</div>
+      <hr class="gold-line">
+      <h2>Jury &amp; Judging</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>Official Selection</h3><p>Every entry is reviewed by our programming committee. Selected works receive the official laurel and enter competition.</p></div>
+      <div class="card"><h3>Professional Jury</h3><p>An independent jury of working film professionals decides the winners, judging artistic quality, storytelling, craft and impact. Jury announced ahead of the season.</p></div>
+      <div class="card"><h3>Audience Award</h3><p>Audiences vote online for their favourite — a prize decided by the people, celebrating films that move a crowd.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The Experience</div>
+      <hr class="gold-line">
+      <h2>Screened in Berlin. Seen Everywhere.</h2>
+      <p>A hybrid model made for today's filmmakers — the prestige of a live Berlin edition and the reach of a global online audience.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>Live in Berlin</h3><p>An intimate live screening and awards evening in Berlin — red carpet, audience and industry.</p></div>
+      <div class="card"><h3>Global Online</h3><p>Selected works reach audiences worldwide through our online programme, beyond the limits of a single room.</p></div>
+      <div class="card"><h3>Laurels &amp; Recognition</h3><p>Official Selection and Winner laurels, digital certificates, and a spotlight that travels with your film.</p></div>
+    </div>
+  </div>
+</section>
+
+<a id="submit"></a>
+<section class="cta-band">
+  <div class="wrap">
+    <div class="kicker">Your Story Belongs Here</div>
+    <hr class="gold-line">
+    <h2>Submit to Berlin Gate</h2>
+    <p style="color:var(--muted);max-width:560px;margin:14px auto 30px">Join filmmakers from around the world. Submissions are handled through FilmFreeway — secure, simple, and built for creators.</p>
+    <a href="#" class="btn btn-primary" style="padding:16px 40px">Submit on FilmFreeway</a>
+    <p style="color:#6a6670;font-size:.8rem;margin-top:16px">FilmFreeway link activated at launch.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="kicker">Location</div>
+        <hr class="gold-line left">
+        <h2 style="font-size:2rem">Berlin, Germany</h2>
+        <p style="color:var(--muted);margin-top:14px">A hybrid festival: live screenings and awards at a Berlin venue (announced ahead of the season), plus a global online programme. Berlin Gate International Film Festival is organised in Germany.</p>
+      </div>
+      <div>
+        <div class="kicker">Contact</div>
+        <hr class="gold-line left">
+        <p style="margin-top:10px;color:var(--muted)">General &amp; submissions</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold-2)">info@bgiff.com</p>
+        <p style="color:#6a6670;font-size:.82rem;margin-top:8px">We aim to reply promptly to every filmmaker.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">BERLIN GATE INTERNATIONAL FILM FESTIVAL</div>
+      <small>An independent, international, hybrid film festival celebrating world independent cinema — screened in Berlin and online. Organised in Germany.</small>
+    </div>
+    <div class="foot-links">
+      <a href="#about">About</a>
+      <a href="#categories">Categories</a>
+      <a href="#awards">Awards</a>
+      <a href="#deadlines">Deadlines &amp; Fees</a>
+    </div>
+    <div class="foot-links">
+      <a href="#jury">Jury &amp; Judging</a>
+      <a href="#submit">Submit</a>
+      <a href="#contact">Contact</a>
+      <a href="#">FilmFreeway</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="copen">© 2026 Berlin Gate International Film Festival · All rights reserved · Berlin, Germany</div></div>
+</footer>
+
+<script>
+  document.querySelectorAll('#navlinks a').forEach(function(a){
+    a.addEventListener('click',function(){document.getElementById('navlinks').classList.remove('open');});
+  });
+</script>
+</body>
+</html>
