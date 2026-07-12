@@ -1,0 +1,1 @@
+export default function Page(){return <div className="legal-page"><h1>Cookie Policy</h1><p>The initial website should operate without non-essential cookies. If analytics, embedded video or marketing services are enabled, a consent manager must be configured before those services load.</p></div>}

@@ -1,0 +1,1 @@
+export default function Page(){return <div className="legal-page"><h1>Impressum</h1><p><strong>Berlin Gate International Film Festival</strong><br/>Berlin, Germany</p><p>Operator, legal address and authorised representative must be completed before public launch.</p><p>Email: hello@bgiff.com</p></div>}

@@ -1,0 +1,3 @@
+import Image from "next/image";import {notFound} from "next/navigation";import {sampleFilms} from "@/lib/data";
+export function generateStaticParams(){return sampleFilms.map(f=>({slug:f.slug}));}
+export default async function Film({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const f=sampleFilms.find(x=>x.slug===slug);if(!f)notFound();return <article className="film-page"><div className="film-poster"><Image src={f.image} alt="" fill/></div><div><span>{f.category}</span><h1>{f.title}</h1><p className="lead">{f.director}</p><dl><dt>Country</dt><dd>{f.country}</dd><dt>Edition</dt><dd>{f.duration}</dd></dl><p>Film pages will connect official information, trailers, screening times, interviews and editorial reviews in one place.</p></div></article>}
