@@ -1,4 +1,5 @@
 export const submitUrl = "https://filmfreeway.com/BGIFF";
+export const festhomeUrl = "https://festhome.com/f/10633";
 
 export const categories = [
   ["Narrative", "Stories with a distinct cinematic voice."],
@@ -17,11 +18,11 @@ export const categories = [
 ] as const;
 
 export const dates = [
-  ["20 JUL 2026", "Call Opens"],
-  ["30 SEP 2026", "Earlybird Deadline"],
+  ["23 JUL 2026", "Call Opens"],
+  ["12 SEP 2026", "Earlybird Deadline"],
   ["30 NOV 2026", "Final Deadline"],
   ["21 DEC 2026", "Official Selection"],
-  ["23 JAN 2027", "Berlin Event"],
+  ["24 JAN 2027", "Berlin Event"],
 ] as const;
 
 export const articles = [
