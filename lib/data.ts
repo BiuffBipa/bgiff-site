@@ -18,9 +18,9 @@ export const categories = [
 ] as const;
 
 export const dates = [
-  ["23 JUL 2026", "Call Opens"],
-  ["12 SEP 2026", "Earlybird Deadline"],
-  ["30 NOV 2026", "Final Deadline"],
+  ["5 OCT 2026", "Regular Deadline"],
+  ["1 NOV 2026", "Late Deadline"],
+  ["21 NOV 2026", "Extended · Scripts & Photos"],
   ["21 DEC 2026", "Official Selection"],
   ["24 JAN 2027", "Berlin Event"],
 ] as const;
