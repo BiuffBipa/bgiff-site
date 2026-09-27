@@ -10,7 +10,7 @@ export default function Home(){return <>
 
  <Section eyebrow="Competition" title="Every form. One gate." className="dark-section"><div className="category-grid">{categories.map(([name,desc],i)=><Link href="/submit#categories" className="category" key={name}><span>{String(i+1).padStart(2,"0")}</span><h3>{name}</h3><p>{desc}</p><b>↗</b></Link>)}</div></Section>
 
- <Section eyebrow="Recognition" title="One entry. Every relevant opportunity."><div className="split"><p className="lead">Enter once in the appropriate category. Your work is also considered for every relevant craft, technical, thematic and special honour.</p><div className="path-list">{["Submission","Official Selection","Nominee","Award Winner","Berlin Gate Grand Prize"].map((x,i)=><div key={x} className="path-item"><span>{String(i+1).padStart(2,"0")}</span>{x}</div>)}</div></div></Section>
+ <Section eyebrow="Recognition" title="Free to enter. Built to be seen."><div className="split"><p className="lead">Enter in the category that fits your work best. Our selection team screens every eligible entry, and the works that stand out move forward into competition — and into a growing world of recognition, visibility and opportunities around the festival in Berlin.</p><div className="path-list">{["Submission","Official Selection","Nominee","Award Winner","Berlin Gate Grand Prize"].map((x,i)=><div key={x} className="path-item"><span>{String(i+1).padStart(2,"0")}</span>{x}</div>)}</div></div></Section>
 
  <Section id="dates" eyebrow="The First Edition" title="From submission to Berlin." className="timeline-section"><div className="timeline">{dates.map(([date,name],i)=><div className="milestone" key={name}><span>0{i+1}</span><i/><h3>{name}</h3><p>{date}</p></div>)}</div></Section>
 
