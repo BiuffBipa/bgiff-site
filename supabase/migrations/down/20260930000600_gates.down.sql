@@ -1,0 +1,10 @@
+drop view if exists gate_leaderboard;
+drop function if exists close_due_gates(), close_gate(uuid, boolean), gate_should_close(uuid), open_gate(uuid);
+drop table if exists fraud_alerts, laurels cascade;
+drop function if exists votes_reverse() cascade;
+drop function if exists votes_apply() cascade;
+drop table if exists votes, gate_films cascade;
+alter table if exists order_lines drop constraint if exists order_lines_gate_fk;
+alter table if exists prices drop constraint if exists prices_gate_fk;
+drop function if exists gates_version_snapshot() cascade;
+drop table if exists gate_config_versions, gates cascade;
