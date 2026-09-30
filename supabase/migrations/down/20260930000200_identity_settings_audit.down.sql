@@ -1,0 +1,12 @@
+drop function if exists rate_limit_hit(text, integer, interval);
+drop table if exists rate_limits, magic_link_tokens, documents, decisions cascade;
+drop table if exists feature_flags cascade;
+drop function if exists flag(text);
+drop table if exists settings_history, settings cascade;
+drop function if exists setting(text), settings_version_bump();
+drop table if exists user_roles cascade;
+drop function if exists attach_updated_at(regclass), attach_audit(regclass);
+drop function if exists audit_row() cascade;
+drop table if exists audit_log cascade;
+drop function if exists is_service(), is_admin(), is_staff(), has_any_role(role_key[]), has_role(role_key), current_roles();
+drop function if exists set_updated_at() cascade;

@@ -37,3 +37,7 @@ npm start -- -H 127.0.0.1
 ## Brand asset note
 
 The approved raster logo is preserved exactly as supplied. For large-format print and future vector animation, replace it with the final approved SVG master rather than auto-tracing the PNG.
+
+## Platform (Phase A scaffold)
+
+The festival management platform lives next to the site: `docs/platform/` (architecture, schema, build plan, decisions), `supabase/` (migrations, RLS, SQL tests), `lib/platform/` (domain code), `tests/`. Checks: `npm run lint && npm run typecheck && npm test && npm run db:check`. Nothing in the platform changes the public pages; all live switches are feature flags that default to off.
