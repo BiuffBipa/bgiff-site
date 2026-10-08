@@ -18,19 +18,28 @@ export const categories = [
 ] as const;
 
 export const dates = [
-  ["5 OCT 2026", "Regular Deadline"],
-  ["1 NOV 2026", "Late Deadline"],
-  ["21 NOV 2026", "Extended · Scripts & Photos"],
+  ["1 NOV 2026", "Film Deadline"],
+  ["21 NOV 2026", "Scripts & Photos Deadline"],
+  ["24 NOV 2026", "The Reveal"],
   ["21 DEC 2026", "Official Selection"],
-  ["24 JAN 2027", "Berlin Event"],
+  ["23 JAN 2027", "The Gates Open"],
 ] as const;
 
 export const articles = [
   { slug: "introducing-berlin-gate", type: "Festival News", date: "12 July 2026", title: "Introducing Berlin Gate", excerpt: "A new international festival for independent voices, born in Berlin.", image: "/images/hero-web.png" },
-  { slug: "first-edition", type: "Festival Journal", date: "12 July 2026", title: "The First Edition: From Submission to Berlin", excerpt: "The path, the dates and the thinking behind BGIFF's first edition.", image: "/images/timeline.png" },
+  { slug: "first-edition", type: "Festival Journal", date: "12 July 2026", title: "The First Edition: From Submission to Berlin", excerpt: "The path, the dates and the thinking behind BGIFF's first edition.", image: "/images/hero-web.png" },
   { slug: "cinema-new-forms", type: "Perspectives", date: "12 July 2026", title: "Cinema, New Forms and Human Vision", excerpt: "Why emerging tools matter only when they serve an authentic creative voice.", image: "/images/laurels.png" },
 ] as const;
 
 export const sampleFilms = [
   { slug: "programme-coming-soon", title: "Official Selection Coming Soon", director: "Announced 21 December 2026", country: "International", duration: "First Edition", image: "/images/hero-web.png", category: "Programme" },
 ] as const;
+
+// Imprint (§ 5 DDG, § 18 (2) MStV). Values in [brackets] wait for the operator's data — do not publish with brackets.
+export const imprint = {
+  name: "[Full legal name]",
+  address: ["[Street and number]", "[Postcode] Berlin", "Germany"],
+  email: "info@bgiff.com",
+  phone: "[+49 …]",
+  vatId: "[DE…]",
+} as const;
